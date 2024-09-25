@@ -2,7 +2,13 @@
 
 ## Architecture Diagram
 
+The following diagram shows the overall architecture of the application:
+
 ![alt text](./images/image.png)
+
+This is how producer adds new messages to partitions and consumers gets the messages:
+
+![alt text](image.png)
 
 ## Start Kafka, Producer and Consumers
 
