@@ -1,21 +1,20 @@
-const {kafka} = require('./client');
+const { kafka } = require("./client");
+const group = process.argv[2];
 
 async function init() {
-    const consumer = kafka.consumer({groupId: "rider-group"});
-    
-    console.log("Connecting to consumer...");
-    await consumer.connect();
-    console.log("Connected to consumer");
+  const consumer = kafka.consumer({ groupId: group });
+  await consumer.connect();
 
-    await consumer.subscribe({ topics: ["rider-updates"], fromBeginning: true });
+  await consumer.subscribe({ topics: ["riders"], fromBeginning: true });
 
-    await consumer.run({
-        eachMessage: async ({topic, partition, message}) => {
-            console.log(`Received message on topic: ${topic} and partition: ${partition}`);
-            console.log(`Received message: ${message.value.toString()}`);
-        }
-    })
-
+  await consumer.run({
+    eachMessage: async ({ topic, partition, message, heartbeat, pause }) => {
+      console.log(
+        `${group}: [${topic}]: PART:${partition}:`,
+        message.value.toString()
+      );
+    },
+  });
 }
 
 init();
