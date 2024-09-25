@@ -19,7 +19,7 @@ async function init() {
   rl.on("line", async function (line) {
     const [riderName, location] = line.split(" ");
     await producer.send({
-      topic: "riders",
+      topic: "riders_update",
       messages: [
         {
           partition: location?.toLowerCase() === 'north' ? 0 : 1,
