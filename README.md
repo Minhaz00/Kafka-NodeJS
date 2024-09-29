@@ -6,7 +6,7 @@ This project demonstrates the architecture of an event-driven application using 
 
 Apache Kafka is a distributed event streaming platform primarily used for building real-time data pipelines and streaming applications. It allows applications to publish (write) and subscribe to (read) streams of data in real-time and to process these streams as they occur. Kafka is highly scalable, fault-tolerant, and designed for distributed systems.
 
-![alt text](./images/image-3.png)
+![alt text](https://github.com/Minhaz00/Kafka-NodeJS/blob/main/images/image-3.png?raw=true)
 
 ### Key Kafka Concepts
 
@@ -235,7 +235,7 @@ init();
 
 Navigate to src directory to create topic, start producer and consumer. 
 
-![](./images/image-1.png)
+![](https://github.com/Minhaz00/Kafka-NodeJS/blob/main/images/image-1.png?raw=true)
 
 - Run the following command to create the topic:
 
@@ -266,7 +266,7 @@ Navigate to src directory to create topic, start producer and consumer.
 
 Kafka handles load balancing among consumers using **consumer groups**, where each group works together to consume messages from partitions of a topic. This allows Kafka to scale message consumption horizontally.
 
-![alt text](./images/image-5.png)
+![alt text](https://github.com/Minhaz00/Kafka-NodeJS/blob/main/images/image-5.png?raw=true)
 
 #### How It Works:
 
@@ -282,7 +282,7 @@ Kafka handles load balancing among consumers using **consumer groups**, where ea
 
 ### Example in Our Project
 
-![alt text](./images/image-4.png)
+![alt text](https://github.com/Minhaz00/Kafka-NodeJS/blob/main/images/image-4.png?raw=true)
 
 In  project, where the topic `riders_update` has 2 partitions, and we have multiple consumers, Kafka distributes the partitions dynamically:
 
@@ -310,7 +310,8 @@ In  project, where the topic `riders_update` has 2 partitions, and we have multi
 
 The following image shows how messages are partitioned and consumed by different consumer groups:
 
-![](./images/image-2.png)
+![](https://github.com/Minhaz00/Kafka-NodeJS/blob/main/images/image-2.png?raw=true)
+
 
 In the producer, input "rider name" and "location" (`north` or `south`) to send location updates.
 
